@@ -3,33 +3,63 @@
     <div class="row">
         <h1 class="text-center">Edit Campground</h1>
         <div class="col-6 offset-3">
-            <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
+            <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST"  novalidate class="validated-form">
                 <div class="mb-3">
                     <label class="form-label" for="title">Title</label>
                     <input class="form-control" type="text" id="title" name="campground[title]" value="<%=campground.title%>">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid title.
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="location">Location</label>
                 <input class="form-control" type="text" id="location" name ="campground[location]" value="<%=campground.location%>">
+                <div class="valid-feedback">
+                    Looks good!
                 </div>
+                <div class="invalid-feedback">
+                    Please provide a valid title.
+                </div>    
+            </div>
                 <div class="mb-3">
                     <label class="form-label" for="image">Image Url</label>
                     <div class="input-group">
                         <span class="input-group-text" id="image-label">@</span>
                         <input type="text" class="form-control" name="campground[image]" placeholder="www.?.com" aria-label="image-label" aria-describedby="image-label" value="<%=campground.image%>">
-                      </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a valid title.
+                        </div>  
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="price">Campground Price</label>
                     <div class="input-group">
                         <span class="input-group-text" id="price-label">$</span>
                         <input type="text" class="form-control" placeholder="0" name="campground[price]" aria-label="price-label" aria-describedby="price-label" value="<%=campground.price%>">
-                      </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a valid title.
+                        </div>  
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="description">Description</label>
                 <textarea class="form-control" type="text" id="description" name ="campground[description]"><%= campground.description %></textarea>
+                <div class="valid-feedback">
+                    Looks good!
                 </div>
+                <div class="invalid-feedback">
+                    Please provide a valid title.
+                </div>    
+            </div>
                 <div class="mb-3"><button class="btn btn-info">Update Campground</button></div>
                 
             </form>
@@ -38,3 +68,5 @@
         </div>
        </div>
     
+
+   

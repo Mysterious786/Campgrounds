@@ -41,7 +41,7 @@ app.get('/campgrounds/:id', async (req,res)=>{
     res.render('campgrounds/show',{campground})
     res.render('campgrounds/show');
 });
-
+//restapi
 app.get('/campgrounds/:id/edit',async(req,res)=>{
     const campground = await Campground.findById(req.params.id);
     res.render('campgrounds/edit',{campground});
@@ -56,6 +56,7 @@ app.put('/campgrounds/:id',async (req,res)=>{
 app.delete('/campgrounds/:id',async(req,res)=>{
     const {id} =req.params;
     await Campground.findByIdAndDelete(id);
+    console.log("deleted");
     res.redirect('/campgrounds');
 })
 
