@@ -7,6 +7,11 @@ const CampgroundSchema = new Schema({
     price: Number,
     description: String,
     location: String,
+    //adding author for delete and edit for a particular user
+    author:{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     reviews: [
         {
             type:Schema.Types.ObjectId,
